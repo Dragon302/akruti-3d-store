@@ -74,16 +74,16 @@ const ProductPage = () => {
     }
   };
 
-  if (loading) return <div className="min-h-screen bg-[#0f0c29] text-white flex items-center justify-center">Loading Product...</div>;
+  if (loading) return <div className="min-h-screen bg-[#0f0c29] text-gray-800 flex items-center justify-center">Loading Product...</div>;
 
   return (
-    <div className="min-h-screen bg-[#0f0c29] text-white p-6 md:p-12">
+    <div className="min-h-screen bg-[#0f0c29] text-gray-800 p-6 md:p-12">
       <div className="max-w-6xl mx-auto">
         
         {/* --- TOP SECTION: IMAGES & INFO --- */}
         <div className="grid md:grid-cols-2 gap-12 mb-16">
           {/* Image */}
-          <div className="bg-[#1a163a] p-4 rounded-2xl border border-white/10 flex items-center justify-center">
+          <div className="bg-[#1a163a] p-4 rounded-2xl border border-gray-300/10 flex items-center justify-center">
             <img 
   src={product.image} 
   alt={product.name} 
@@ -107,7 +107,7 @@ const ProductPage = () => {
             
             {/* Quantity & Cart */}
             <div className="flex gap-4 mt-8">
-              <div className="flex items-center bg-[#1a163a] rounded-xl border border-white/20">
+              <div className="flex items-center bg-[#1a163a] rounded-xl border border-gray-300/20">
                  <button onClick={() => setQty(q => Math.max(1, q-1))} className="px-4 py-3 hover:bg-white/10"><Minus size={18}/></button>
                  <span className="px-4 font-bold text-xl">{qty}</span>
                  <button onClick={() => setQty(q => q+1)} className="px-4 py-3 hover:bg-white/10"><Plus size={18}/></button>
@@ -118,7 +118,7 @@ const ProductPage = () => {
             </div>
             
             {/* Trust Badges */}
-            <div className="grid grid-cols-2 gap-4 text-sm text-gray-400 mt-6 pt-6 border-t border-white/10">
+            <div className="grid grid-cols-2 gap-4 text-sm text-gray-400 mt-6 pt-6 border-t border-gray-300/10">
               <div className="flex items-center gap-3"><Truck size={20} className="text-cyan-400"/> Fast India-wide Delivery</div>
               <div className="flex items-center gap-3"><ShieldCheck size={20} className="text-pink-400"/> Premium Quality Verified</div>
             </div>
@@ -126,15 +126,15 @@ const ProductPage = () => {
         </div>
 
         {/* --- BOTTOM SECTION: REVIEWS --- */}
-        <div className="grid lg:grid-cols-2 gap-12 pt-10 border-t border-white/10">
+        <div className="grid lg:grid-cols-2 gap-12 pt-10 border-t border-gray-300/10">
           
           {/* 1. Write Review Form */}
-          <div className="bg-[#1a163a] p-8 rounded-2xl border border-white/10 h-fit">
+          <div className="bg-[#1a163a] p-8 rounded-2xl border border-gray-300/10 h-fit">
             <h3 className="text-2xl font-bold mb-6">Write a Review</h3>
             <form onSubmit={submitReview} className="space-y-4">
               <div>
                 <label className="block text-sm text-gray-400 mb-2 font-bold">Rating</label>
-                <select value={rating} onChange={(e) => setRating(Number(e.target.value))} className="w-full bg-[#0f0c29] border border-white/20 p-4 rounded-xl outline-none focus:border-cyan-500">
+                <select value={rating} onChange={(e) => setRating(Number(e.target.value))} className="w-full bg-[#0f0c29] border border-gray-300/20 p-4 rounded-xl outline-none focus:border-cyan-500">
                   <option value="5">⭐⭐⭐⭐⭐ - Excellent</option>
                   <option value="4">⭐⭐⭐⭐ - Very Good</option>
                   <option value="3">⭐⭐⭐ - Good</option>
@@ -149,7 +149,7 @@ const ProductPage = () => {
                   placeholder="Share your experience with this product..." 
                   value={comment}
                   onChange={(e) => setComment(e.target.value)}
-                  className="w-full bg-[#0f0c29] border border-white/20 p-4 rounded-xl outline-none focus:border-cyan-500 transition"
+                  className="w-full bg-[#0f0c29] border border-gray-300/20 p-4 rounded-xl outline-none focus:border-cyan-500 transition"
                   required
                 />
               </div>
@@ -160,11 +160,11 @@ const ProductPage = () => {
           {/* 2. Display Reviews List */}
           <div className="space-y-6">
             <h3 className="text-2xl font-bold mb-4 flex items-center gap-2">
-              Customer Reviews <span className="text-sm bg-pink-600 px-2 py-1 rounded-full text-white">{product.numReviews || 0}</span>
+              Customer Reviews <span className="text-sm bg-pink-600 px-2 py-1 rounded-full text-gray-800">{product.numReviews || 0}</span>
             </h3>
             
             {(!product.reviews || product.reviews.length === 0) && (
-              <div className="text-center p-10 bg-[#1a163a] rounded-xl border border-dashed border-white/20 text-gray-500">
+              <div className="text-center p-10 bg-[#1a163a] rounded-xl border border-dashed border-gray-300/20 text-gray-500">
                 No reviews yet. Be the first to review!
               </div>
             )}
@@ -172,12 +172,12 @@ const ProductPage = () => {
             <div className="space-y-4 max-h-[600px] overflow-y-auto pr-2 custom-scrollbar">
   {/* The '?' after reviews is the SAFETY KEY */}
   {product.reviews?.map((review) => (
-    <div key={review._id || Math.random()} className="bg-[#1a163a] p-6 rounded-xl border border-white/10 relative group">
+    <div key={review._id || Math.random()} className="bg-[#1a163a] p-6 rounded-xl border border-gray-300/10 relative group">
       
       {/* ... your existing delete button code ... */}
 
       <div className="flex items-center gap-3 mb-3">
-        <div className="bg-gradient-to-br from-pink-500 to-purple-600 w-10 h-10 rounded-full flex items-center justify-center font-bold text-white shadow-lg">
+        <div className="bg-gradient-to-br from-pink-500 to-purple-600 w-10 h-10 rounded-full flex items-center justify-center font-bold text-gray-800 shadow-lg">
           {/* Safety check for name */}
           {review.name ? review.name.charAt(0).toUpperCase() : "U"}
         </div>
@@ -191,7 +191,7 @@ const ProductPage = () => {
         </div>
       </div>
       
-      <p className="text-gray-300 ml-14 bg-[#0f0c29] p-3 rounded-lg border border-white/5 italic">
+      <p className="text-gray-300 ml-14 bg-[#0f0c29] p-3 rounded-lg border border-gray-300/5 italic">
         "{review.comment}"
       </p>
     </div>

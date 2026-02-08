@@ -41,10 +41,10 @@ const OrdersPage = () => {
       ) : (
         <div className="max-w-4xl mx-auto space-y-6">
           {orders.map((order) => (
-            <div key={order._id} className="bg-[#1a163a] p-6 rounded-xl border border-white/10 hover:border-cyan-500/30 transition-all">
+            <div key={order._id} className="bg-[#1a163a] p-6 rounded-xl border border-gray-200 hover:border-cyan-500/30 transition-all">
               
               {/* Header */}
-              <div className="flex flex-col md:flex-row justify-between md:items-center mb-4 border-b border-white/10 pb-4">
+              <div className="flex flex-col md:flex-row justify-between md:items-center mb-4 border-b border-gray-200 pb-4">
                 <div>
                   <p className="text-xs text-gray-400 uppercase font-bold">Order ID</p>
                   <p className="font-mono text-sm text-cyan-400">#{order._id}</p>
@@ -86,7 +86,7 @@ const OrdersPage = () => {
               </div>
 
               {/* Total */}
-              <div className="mt-6 pt-4 border-t border-white/10 flex justify-between items-center">
+              <div className="mt-6 pt-4 border-t border-gray-200 flex justify-between items-center">
                 <span className="text-sm text-gray-400">Total Amount</span>
                 <span className="text-xl font-bold text-pink-500">₹{order.amount}</span>
               </div>

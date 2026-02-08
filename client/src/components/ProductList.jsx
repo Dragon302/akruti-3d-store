@@ -56,11 +56,11 @@ const ProductList = () => {
         className="text-center mb-10"
       >
         <h2 className="text-4xl md:text-5xl font-extrabold mb-6">
-          Explore <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-cyan-500">Collection</span>
+          Explore <span className="text-transparent lip-text bg-gradient-to-r from-pink-500 to-cyan-500">Collection</span>
         </h2>
 
         {/* --- CONTROLS BAR --- */}
-        <div className="max-w-4xl mx-auto flex flex-col md:flex-row gap-4 items-center justify-between bg-[#1a163a] p-4 rounded-2xl border border-white/10 shadow-lg">
+        <div className="max-w-4xl mx-auto flex flex-col md:flex-row gap-4 items-center justify-between bg-[#1a163a] p-4 rounded-2xl border border-gray-200 shadow-lg">
           
           {/* Search Input */}
           <div className="relative w-full md:w-1/2">
@@ -68,7 +68,7 @@ const ProductList = () => {
             <input 
               type="text" 
               placeholder="Search artifacts..." 
-              className="w-full bg-[#0f0c29] text-white pl-12 pr-4 py-3 rounded-xl border border-white/10 focus:border-cyan-500 outline-none transition"
+              className="w-full bg-[#0f0c29] text-white pl-12 pr-4 py-3 rounded-xl border border-gray-200 focus:border-cyan-500 outline-none transition"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
@@ -83,7 +83,7 @@ const ProductList = () => {
                 className={`px-4 py-2 rounded-lg text-sm font-bold whitespace-nowrap transition-all ${
                   selectedCategory === cat 
                     ? 'bg-pink-600 text-white shadow-lg shadow-pink-600/30' 
-                    : 'bg-[#0f0c29] text-gray-400 hover:text-white border border-white/10'
+                    : 'bg-[#0f0c29] text-gray-400 hover:text-white border border-gray-200'
                 }`}
               >
                 {cat}
@@ -111,7 +111,7 @@ const ProductList = () => {
                 <div className="h-64 overflow-hidden relative cursor-pointer">
                   <img src={p.image} alt={p.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#1a163a] via-transparent to-transparent opacity-80" />
-                  <span className="absolute top-3 left-3 bg-black/50 backdrop-blur px-3 py-1 text-xs font-bold rounded-full text-white border border-white/10">
+                  <span className="absolute top-3 left-3 bg-black/50 backdrop-blur px-3 py-1 text-xs font-bold rounded-full text-white border border-gray-200">
                     {p.category || '3D Print'}
                   </span>
                 </div>

@@ -39,7 +39,7 @@ const CheckoutPage = () => {
         key: "rzp_test_SAwqPu376DkB0L", // <--- PASTE YOUR KEY ID HERE ALSO (For Frontend)
         amount: order.amount,
         currency: order.currency,
-        name: "Akruti 3D",
+        name: "Akruti 3D Store",
         description: "3D Printed Products Order",
         order_id: order.id, // This is the ID we got from backend
         handler: async (response) => {
@@ -108,23 +108,23 @@ const CheckoutPage = () => {
     }
   };
 
-  if (cart.length === 0) return <div className="text-white text-center mt-20">Your cart is empty</div>;
+  if (cart.length === 0) return <div className="text-gray-800 text-center mt-20">Your cart is empty</div>;
 
   return (
-    <div className="min-h-screen bg-[#0f0c29] text-white p-6 md:p-12">
+    <div className="min-h-screen bg-[#0f0c29] text-gray-800 p-6 md:p-12">
       <h1 className="text-3xl font-bold mb-8 text-center">Secure Checkout</h1>
 
       <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-12">
         
         {/* LEFT: Shipping Form */}
         <div className="space-y-6">
-          <div className="bg-[#1a163a] p-6 rounded-xl border border-white/10">
+          <div className="bg-[#1a163a] p-6 rounded-xl border border-gray-300/10">
             <h2 className="text-xl font-bold mb-4 flex items-center gap-2"><Truck className="text-pink-500"/> Shipping Details</h2>
             <form id="checkout-form" onSubmit={handlePayment} className="space-y-4">
-              <div><label className="text-sm text-gray-400">Address</label><input required type="text" value={form.address} onChange={e=>setForm({...form, address: e.target.value})} className="w-full bg-[#0f0c29] border border-white/20 p-3 rounded-lg outline-none focus:border-pink-500"/></div>
+              <div><label className="text-sm text-gray-400">Address</label><input required type="text" value={form.address} onChange={e=>setForm({...form, address: e.target.value})} className="w-full bg-[#0f0c29] border border-gray-300/20 p-3 rounded-lg outline-none focus:border-pink-500"/></div>
               <div className="grid grid-cols-2 gap-4">
-                <div><label className="text-sm text-gray-400">City</label><input required type="text" value={form.city} onChange={e=>setForm({...form, city: e.target.value})} className="w-full bg-[#0f0c29] border border-white/20 p-3 rounded-lg outline-none focus:border-pink-500"/></div>
-                <div><label className="text-sm text-gray-400">Zip</label><input required type="text" value={form.zip} onChange={e=>setForm({...form, zip: e.target.value})} className="w-full bg-[#0f0c29] border border-white/20 p-3 rounded-lg outline-none focus:border-pink-500"/></div>
+                <div><label className="text-sm text-gray-400">City</label><input required type="text" value={form.city} onChange={e=>setForm({...form, city: e.target.value})} className="w-full bg-[#0f0c29] border border-gray-300/20 p-3 rounded-lg outline-none focus:border-pink-500"/></div>
+                <div><label className="text-sm text-gray-400">Zip</label><input required type="text" value={form.zip} onChange={e=>setForm({...form, zip: e.target.value})} className="w-full bg-[#0f0c29] border border-gray-300/20 p-3 rounded-lg outline-none focus:border-pink-500"/></div>
               </div>
             </form>
           </div>
@@ -139,7 +139,7 @@ const CheckoutPage = () => {
         </div>
 
         {/* RIGHT: Summary */}
-        <div className="bg-[#1a163a] p-6 rounded-xl border border-white/10 h-fit">
+        <div className="bg-[#1a163a] p-6 rounded-xl border border-gray-300/10 h-fit">
           <h2 className="text-xl font-bold mb-4 flex items-center gap-2"><ShieldCheck className="text-cyan-500"/> Order Summary</h2>
           <div className="space-y-2 mb-4 max-h-40 overflow-y-auto pr-2">
             {cart.map(item => (
@@ -148,7 +148,7 @@ const CheckoutPage = () => {
               </div>
             ))}
           </div>
-          <div className="border-t border-white/10 pt-4 space-y-2">
+          <div className="border-t border-gray-300/10 pt-4 space-y-2">
              <div className="flex justify-between"><span>Subtotal</span><span>₹{total}</span></div>
              <div className="flex justify-between font-bold text-lg text-cyan-400"><span>Total</span><span>₹{Math.round(total * 1.18)}</span></div>
           </div>

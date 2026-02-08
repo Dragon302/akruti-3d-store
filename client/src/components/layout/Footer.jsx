@@ -3,7 +3,7 @@ import { Facebook, Twitter, Instagram, Linkedin, Mail, MapPin, Phone } from 'luc
 
 const Footer = () => {
   return (
-    <footer className="bg-[#1a163a] text-white pt-16 pb-8 border-t border-white/10">
+    <footer className="bg-[#1a163a] text-white pt-16 pb-8 border-t border-gray-200">
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
         
         {/* Column 1: Brand Info */}
@@ -67,7 +67,7 @@ const Footer = () => {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-white/10 pt-8 mt-8 text-center text-sm text-gray-500">
+      <div className="border-t border-gray-200 pt-8 mt-8 text-center text-sm text-gray-500">
         <p>&copy; {new Date().getFullYear()} Akruti 3D Solutions. All rights reserved.</p>
         <div className="flex justify-center gap-6 mt-4">
           <Link to="/" className="hover:text-white">Privacy Policy</Link>

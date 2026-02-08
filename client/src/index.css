@@ -5,9 +5,19 @@
 @tailwind utilities;
 
 body {
-  font-family: 'Inter', sans-serif;
-  background-color: #0f0c29; /* Deep Space Background */
-  color: #e2e8f0; /* Light Gray Text (Readable on dark) */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Urbanist', sans-serif;
+
+
+  background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+  background-attachment: fixed; /* Keeps bg still while scrolling */
+  
+  
+  /* NEW: Default Text Color (Dark Gray instead of White) */
+  color: #1f2937;
+  min-height: 100vh;
 }
 
 /* Fix for Input fields so you can see what you type */

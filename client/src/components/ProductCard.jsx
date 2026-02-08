@@ -31,7 +31,7 @@ const ProductCard = ({ product, onAddToCart }) => {
           <motion.button 
             whileTap={{ scale: 0.9 }}
             onClick={() => onAddToCart(product)}
-            className="bg-primary text-white p-3 rounded-xl hover:bg-accent transition-colors"
+            className="bg-primary text-white p-3 rounded-xl hover:bg-white/70 backdrop-blur-lg border border-white/40 shadow-xlccent transition-colors"
           >
             <ShoppingCart size={20} />
           </motion.button>

@@ -43,9 +43,9 @@ const LoginPage = () => {
 
   return (
     <div className="min-h-screen bg-[#0f0c29] flex items-center justify-center p-4">
-      <div className="bg-[#1a163a] w-full max-w-md p-8 rounded-2xl border border-white/10 shadow-2xl relative">
+      <div className="bg-[#1a163a] w-full max-w-md p-8 rounded-2xl border border-gray-300/10 shadow-2xl relative">
         
-        <h2 className="text-3xl font-bold text-center text-white mb-2">Welcome Back</h2>
+        <h2 className="text-3xl font-bold text-center text-gray-800 mb-2">Welcome Back</h2>
         
         <form onSubmit={handleSubmit} className="space-y-5 mt-8">
           
@@ -57,7 +57,7 @@ const LoginPage = () => {
                 type="email" 
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full bg-[#0f0c29] border border-white/20 text-white pl-10 pr-4 py-3 rounded-xl outline-none focus:border-pink-500"
+                className="w-full bg-[#0f0c29] border border-gray-300/20 text-gray-800 pl-10 pr-4 py-3 rounded-xl outline-none focus:border-pink-500"
                 placeholder="admin@akruti.com"
                 required 
               />
@@ -72,7 +72,7 @@ const LoginPage = () => {
                 type="password" 
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full bg-[#0f0c29] border border-white/20 text-white pl-10 pr-4 py-3 rounded-xl outline-none focus:border-pink-500"
+                className="w-full bg-[#0f0c29] border border-gray-300/20 text-gray-800 pl-10 pr-4 py-3 rounded-xl outline-none focus:border-pink-500"
                 placeholder="••••••"
                 required 
               />
@@ -83,7 +83,7 @@ const LoginPage = () => {
           <button 
             type="submit" 
             disabled={loading}
-            className="w-full bg-gradient-to-r from-pink-600 to-purple-600 text-white font-bold py-3.5 rounded-xl hover:shadow-lg transition-all flex items-center justify-center gap-2 disabled:opacity-50"
+            className="w-full bg-gradient-to-r from-pink-600 to-purple-600 text-gray-800 font-bold py-3.5 rounded-xl hover:shadow-lg transition-all flex items-center justify-center gap-2 disabled:opacity-50"
           >
             {loading ? "Signing In..." : <>Sign In <ArrowRight size={20} /></>}
           </button>

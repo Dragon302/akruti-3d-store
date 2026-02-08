@@ -31,7 +31,7 @@ const CartPage = () => {
         </h1>
 
         {cart.length === 0 ? (
-          <div className="text-center py-20 bg-[#1a163a] rounded-2xl border border-dashed border-white/20">
+          <div className="text-center py-20 bg-[#1a163a] rounded-2xl border border-dashed border-gray-200">
             <h2 className="text-2xl font-bold mb-4">Your cart is empty</h2>
             <Link to="/shop" className="bg-gradient-to-r from-cyan-500 to-blue-600 px-6 py-3 rounded-full font-bold">Start Shopping</Link>
           </div>
@@ -41,7 +41,7 @@ const CartPage = () => {
             {/* CART ITEMS LIST */}
             <div className="lg:col-span-2 space-y-4">
               {cart.map((item) => (
-                <div key={item._id} className="bg-[#1a163a] p-4 rounded-xl border border-white/10 flex gap-4 items-center">
+                <div key={item._id} className="bg-[#1a163a] p-4 rounded-xl border border-gray-200 flex gap-4 items-center">
                   <img src={item.image} alt={item.name} className="w-20 h-20 object-cover rounded-lg bg-black" />
                   
                   <div className="flex-1">
@@ -50,7 +50,7 @@ const CartPage = () => {
                   </div>
 
                   {/* Quantity Controls */}
-                  <div className="flex items-center bg-[#0f0c29] rounded-lg border border-white/20">
+                  <div className="flex items-center bg-[#0f0c29] rounded-lg border border-gray-200">
                     <button 
                       onClick={() => addToCart({ ...item, qty: -1 })} 
                       disabled={item.qty <= 1}
@@ -77,7 +77,7 @@ const CartPage = () => {
             </div>
 
             {/* ORDER SUMMARY */}
-            <div className="lg:col-span-1 h-fit bg-[#1a163a] p-6 rounded-2xl border border-white/10 sticky top-4">
+            <div className="lg:col-span-1 h-fit bg-[#1a163a] p-6 rounded-2xl border border-gray-200 sticky top-4">
               <h2 className="text-xl font-bold mb-6">Order Summary</h2>
               
               <div className="space-y-3 mb-6 text-gray-300">
@@ -87,7 +87,7 @@ const CartPage = () => {
                   <span>Shipping</span> 
                   <span className={shipping === 0 ? "text-green-400" : ""}>{shipping === 0 ? "Free" : `₹${shipping}`}</span>
                 </div>
-                <div className="border-t border-white/10 pt-3 flex justify-between font-bold text-white text-xl">
+                <div className="border-t border-gray-200 pt-3 flex justify-between font-bold text-white text-xl">
                   <span>Total</span> <span>₹{total}</span>
                 </div>
               </div>

@@ -46,16 +46,16 @@ const RegisterPage = () => {
 
   return (
     <div className="min-h-screen bg-[#0f0c29] flex items-center justify-center p-4">
-      <div className="bg-[#1a163a] w-full max-w-md p-8 rounded-2xl border border-white/10 shadow-2xl relative">
+      <div className="bg-[#1a163a] w-full max-w-md p-8 rounded-2xl border border-gray-300/10 shadow-2xl relative">
         
         {/* Header Icon */}
         <div className="flex justify-center mb-6">
           <div className="bg-gradient-to-r from-cyan-500 to-blue-600 p-3 rounded-full">
-            <UserPlus size={32} className="text-white" />
+            <UserPlus size={32} className="text-gray-800" />
           </div>
         </div>
 
-        <h2 className="text-3xl font-bold text-center text-white mb-2">Create Account</h2>
+        <h2 className="text-3xl font-bold text-center text-gray-800 mb-2">Create Account</h2>
         <p className="text-gray-400 text-center mb-8">Join us to start your 3D journey</p>
         
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -69,7 +69,7 @@ const RegisterPage = () => {
                 type="text" 
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full bg-[#0f0c29] border border-white/20 text-white pl-10 pr-4 py-3 rounded-xl outline-none focus:border-cyan-500 transition-colors"
+                className="w-full bg-[#0f0c29] border border-gray-300/20 text-gray-800 pl-10 pr-4 py-3 rounded-xl outline-none focus:border-cyan-500 transition-colors"
                 placeholder="John Doe"
                 required 
               />
@@ -85,7 +85,7 @@ const RegisterPage = () => {
                 type="email" 
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full bg-[#0f0c29] border border-white/20 text-white pl-10 pr-4 py-3 rounded-xl outline-none focus:border-cyan-500 transition-colors"
+                className="w-full bg-[#0f0c29] border border-gray-300/20 text-gray-800 pl-10 pr-4 py-3 rounded-xl outline-none focus:border-cyan-500 transition-colors"
                 placeholder="john@example.com"
                 required 
               />
@@ -101,7 +101,7 @@ const RegisterPage = () => {
                 type="password" 
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full bg-[#0f0c29] border border-white/20 text-white pl-10 pr-4 py-3 rounded-xl outline-none focus:border-cyan-500 transition-colors"
+                className="w-full bg-[#0f0c29] border border-gray-300/20 text-gray-800 pl-10 pr-4 py-3 rounded-xl outline-none focus:border-cyan-500 transition-colors"
                 placeholder="••••••"
                 required 
               />
@@ -112,7 +112,7 @@ const RegisterPage = () => {
           <button 
             type="submit"
             disabled={loading}
-            className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold py-3.5 rounded-xl hover:shadow-[0_0_20px_rgba(6,182,212,0.4)] transition-all flex items-center justify-center gap-2 mt-4 disabled:opacity-50"
+            className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 text-gray-800 font-bold py-3.5 rounded-xl hover:shadow-[0_0_20px_rgba(6,182,212,0.4)] transition-all flex items-center justify-center gap-2 mt-4 disabled:opacity-50"
           >
             {loading ? "Creating..." : <>Create Account <ArrowRight size={20} /></>}
           </button>
