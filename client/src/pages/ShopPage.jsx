@@ -12,7 +12,7 @@ const ShopPage = () => {
 
   useEffect(() => {
     // Fetch products from backend
-    axios.get('http://localhost:5000/api/products')
+    axios.get('https://akruti-3d-store.onrender.com/api/products')
       .then(res => {
         setProducts(Array.isArray(res.data) ? res.data : []);
         setLoading(false);

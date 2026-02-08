@@ -11,7 +11,7 @@ const HomePage = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/products');
+        const res = await axios.get('https://akruti-3d-store.onrender.com/api/products');
         setProducts(res.data);
         setLoading(false);
       } catch (err) {

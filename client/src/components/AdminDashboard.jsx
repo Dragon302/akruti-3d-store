@@ -21,9 +21,9 @@ const AdminDashboard = () => {
     if (activeTab === 'messages') fetchMessages();
   }, [activeTab]);
 
-  const fetchProducts = async () => { try { const res = await axios.get('http://localhost:5000/api/products'); setProducts(res.data); } catch (err) {} };
-  const fetchOrders = async () => { try { const res = await axios.get('http://localhost:5000/api/orders'); setOrders(res.data); } catch (err) {} };
-  const fetchMessages = async () => { try { const res = await axios.get('http://localhost:5000/api/messages'); setMessages(res.data); } catch (err) {} };
+  const fetchProducts = async () => { try { const res = await axios.get('https://akruti-3d-store.onrender.com/api/products'); setProducts(res.data); } catch (err) {} };
+  const fetchOrders = async () => { try { const res = await axios.get('https://akruti-3d-store.onrender.com/api/orders'); setOrders(res.data); } catch (err) {} };
+  const fetchMessages = async () => { try { const res = await axios.get('https://akruti-3d-store.onrender.com/api/messages'); setMessages(res.data); } catch (err) {} };
 
   // --- LOGIC: PRODUCTS ---
   useEffect(() => {
@@ -36,20 +36,20 @@ const AdminDashboard = () => {
 
   const handleAddProduct = async (e) => {
     e.preventDefault();
-    try { await axios.post('http://localhost:5000/api/products', form); toast.success("Added!"); fetchProducts(); } catch (err) { toast.error("Failed"); }
+    try { await axios.post('https://akruti-3d-store.onrender.com/api/products', form); toast.success("Added!"); fetchProducts(); } catch (err) { toast.error("Failed"); }
   };
   const handleDeleteProduct = async (id) => {
-    if(window.confirm("Delete?")) { await axios.delete(`http://localhost:5000/api/products/${id}`); fetchProducts(); }
+    if(window.confirm("Delete?")) { await axios.delete(`https://akruti-3d-store.onrender.com/api/products/${id}`); fetchProducts(); }
   };
 
   // --- LOGIC: ORDERS ---
   const updateOrderStatus = async (id, status) => {
-    try { await axios.put(`http://localhost:5000/api/orders/${id}`, { status }); toast.success(`Order ${status}`); fetchOrders(); } catch (err) {}
+    try { await axios.put(`https://akruti-3d-store.onrender.com/api/orders/${id}`, { status }); toast.success(`Order ${status}`); fetchOrders(); } catch (err) {}
   };
 
   // --- LOGIC: MESSAGES ---
   const handleDeleteMessage = async (id) => {
-    if(window.confirm("Delete message?")) { await axios.delete(`http://localhost:5000/api/messages/${id}`); fetchMessages(); }
+    if(window.confirm("Delete message?")) { await axios.delete(`https://akruti-3d-store.onrender.com/api/messages/${id}`); fetchMessages(); }
   };
 
   return (

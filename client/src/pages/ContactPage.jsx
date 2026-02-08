@@ -12,7 +12,7 @@ const ContactPage = () => {
     setLoading(true);
 
     try {
-      await axios.post('http://localhost:5000/api/messages', form);
+      await axios.post('https://akruti-3d-store.onrender.com/api/messages', form);
       toast.success("Message sent! We'll reply shortly.");
       setForm({ name: '', email: '', message: '' }); // Clear form
     } catch (err) {

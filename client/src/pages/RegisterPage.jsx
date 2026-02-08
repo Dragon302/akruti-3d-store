@@ -21,7 +21,7 @@ const RegisterPage = () => {
 
     try {
       // 1. Send Register Request to Backend
-      const res = await axios.post('http://localhost:5000/api/auth/register', {
+      const res = await axios.post('https://akruti-3d-store.onrender.com/api/auth/register', {
         username: name,
         email,
         password

@@ -24,7 +24,7 @@ const ProductPage = () => {
     const getProduct = async () => {
       try {
         console.log("Fetching Product ID:", id);
-        const res = await axios.get(`http://localhost:5000/api/products/find/${id}`);
+        const res = await axios.get(`https://akruti-3d-store.onrender.com/api/products/find/${id}`);
         setProduct(res.data);
         setLoading(false);
       } catch (err) {
@@ -47,7 +47,7 @@ const ProductPage = () => {
     if (!user) return toast.error("Please login to review");
     
     try {
-      const res = await axios.post(`http://localhost:5000/api/products/${id}/reviews`, {
+      const res = await axios.post(`https://akruti-3d-store.onrender.com/api/products/${id}/reviews`, {
         name: user.username || user.name || "Customer", 
         rating,
         comment,
@@ -66,7 +66,7 @@ const ProductPage = () => {
     if(!window.confirm("Are you sure you want to delete this review?")) return;
     try {
       // Note: Make sure your backend route matches this URL!
-      const res = await axios.delete(`http://localhost:5000/api/products/${id}/reviews/${reviewId}`);
+      const res = await axios.delete(`https://akruti-3d-store.onrender.com/api/products/${id}/reviews/${reviewId}`);
       setProduct(res.data); 
       toast.success("Review Deleted");
     } catch (err) {

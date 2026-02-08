@@ -30,7 +30,7 @@ const CheckoutPage = () => {
      
 
       // A. Create Order ID from Backend
-      const { data: { data: order } } = await axios.post('http://localhost:5000/api/payment/orders', {
+      const { data: { data: order } } = await axios.post('https://akruti-3d-store.onrender.com/api/payment/orders', {
         amount: total
       });
 
@@ -45,7 +45,7 @@ const CheckoutPage = () => {
         handler: async (response) => {
           try {
              // C. Verify Payment
-             const verifyUrl = "http://localhost:5000/api/payment/verify";
+             const verifyUrl = "https://akruti-3d-store.onrender.com/api/payment/verify";
              const { data } = await axios.post(verifyUrl, response);
              
 
@@ -96,7 +96,7 @@ const CheckoutPage = () => {
         status: "Paid" // We mark it as Paid immediately
       };
 
-      await axios.post('http://localhost:5000/api/orders', orderData);
+      await axios.post('https://akruti-3d-store.onrender.com/api/orders', orderData);
       
       toast.success("Payment Successful! Order Placed.");
       clearCart();
