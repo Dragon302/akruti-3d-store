@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #0f0c29; /* Deep Space Background */
+  color: #e2e8f0; /* Light Gray Text (Readable on dark) */
+}
+
+/* Fix for Input fields so you can see what you type */
+input, textarea, select {
+  background-color: #1a163a; /* Dark Purple */
+  color: #ffffff; /* White Text */
+  border: 1px solid #334155;
+  border-radius: 0.5rem;
+}
+
+/* Fix for Buttons */
+button {
+  font-weight: 600;
+}
