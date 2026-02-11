@@ -19,7 +19,7 @@ import ContactPage from './pages/ContactPage';
 
 function App() {
   return (
-    <div className="bg-[#0f0c29] min-h-screen text-white flex flex-col">
+    <div className="bg-[#0f0c29] min-h-screen text-gray-800 flex flex-col">
       <Toaster position="top-center" />
       <Navbar />
       

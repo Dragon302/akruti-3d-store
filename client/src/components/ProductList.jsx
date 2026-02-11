@@ -47,7 +47,7 @@ const ProductList = () => {
   const categories = ['All', ...new Set(products.map(p => p.category || '3D Print'))];
 
   return (
-    <div className="min-h-screen bg-[#0f0c29] text-white p-6 md:p-12">
+    <div className="min-h-screen bg-[#0f0c29] text-gray-800 p-6 md:p-12">
       
       {/* --- HEADER SECTION --- */}
       <motion.div 
@@ -68,7 +68,7 @@ const ProductList = () => {
             <input 
               type="text" 
               placeholder="Search artifacts..." 
-              className="w-full bg-[#0f0c29] text-white pl-12 pr-4 py-3 rounded-xl border border-gray-200 focus:border-cyan-500 outline-none transition"
+              className="w-full bg-[#0f0c29] text-gray-800 pl-12 pr-4 py-3 rounded-xl border border-gray-200 focus:border-cyan-500 outline-none transition"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
@@ -82,8 +82,8 @@ const ProductList = () => {
                 onClick={() => setSelectedCategory(cat)}
                 className={`px-4 py-2 rounded-lg text-sm font-bold whitespace-nowrap transition-all ${
                   selectedCategory === cat 
-                    ? 'bg-pink-600 text-white shadow-lg shadow-pink-600/30' 
-                    : 'bg-[#0f0c29] text-gray-400 hover:text-white border border-gray-200'
+                    ? 'bg-pink-600 text-gray-800 shadow-lg shadow-pink-600/30' 
+                    : 'bg-[#0f0c29] text-gray-400 hover:text-gray-800 border border-gray-200'
                 }`}
               >
                 {cat}
@@ -111,7 +111,7 @@ const ProductList = () => {
                 <div className="h-64 overflow-hidden relative cursor-pointer">
                   <img src={p.image} alt={p.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#1a163a] via-transparent to-transparent opacity-80" />
-                  <span className="absolute top-3 left-3 bg-black/50 backdrop-blur px-3 py-1 text-xs font-bold rounded-full text-white border border-gray-200">
+                  <span className="absolute top-3 left-3 bg-black/50 backdrop-blur px-3 py-1 text-xs font-bold rounded-full text-gray-800 border border-gray-200">
                     {p.category || '3D Print'}
                   </span>
                 </div>
@@ -120,7 +120,7 @@ const ProductList = () => {
               {/* Details */}
               <div className="p-5 relative z-10">
                 <Link to={`/product/${p._id}`}>
-                  <h3 className="text-lg font-bold text-white group-hover:text-pink-500 transition-colors truncate w-full">{p.name}</h3>
+                  <h3 className="text-lg font-bold text-gray-800 group-hover:text-pink-500 transition-colors truncate w-full">{p.name}</h3>
                 </Link>
                 
                 <div className="flex items-center gap-1 text-yellow-400 text-xs mb-4 mt-2">
@@ -130,7 +130,7 @@ const ProductList = () => {
 
                 <div className="flex justify-between items-center mt-4">
                   <span className="text-2xl font-bold text-cyan-400">₹{p.price}</span>
-                  <button onClick={() => addToCart(p)} className="bg-pink-600 hover:bg-pink-500 text-white p-3 rounded-xl shadow-lg active:scale-95 transition-all">
+                  <button onClick={() => addToCart(p)} className="bg-pink-600 hover:bg-pink-500 text-gray-800 p-3 rounded-xl shadow-lg active:scale-95 transition-all">
                     <Plus size={20} />
                   </button>
                 </div>

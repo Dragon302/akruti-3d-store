@@ -3,12 +3,12 @@ import { Facebook, Twitter, Instagram, Linkedin, Mail, MapPin, Phone } from 'luc
 
 const Footer = () => {
   return (
-    <footer className="bg-[#1a163a] text-white pt-16 pb-8 border-t border-gray-200">
+    <footer className="bg-[#1a163a] text-gray-800 pt-16 pb-8 border-t border-gray-200">
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
         
         {/* Column 1: Brand Info */}
         <div className="space-y-4">
-          <h2 className="text-2xl font-bold tracking-tight text-white">
+          <h2 className="text-2xl font-bold tracking-tight text-gray-800">
             Akruti<span className="text-secondary">.3D</span>
           </h2>
           <p className="text-gray-400 text-sm leading-relaxed">
@@ -26,10 +26,10 @@ const Footer = () => {
         <div>
           <h3 className="text-lg font-bold mb-6 text-cyan-400">Get to Know Us</h3>
           <ul className="space-y-3 text-sm text-gray-400">
-            <li><Link to="/" className="hover:text-white transition">About Akruti</Link></li>
-            <li><Link to="/shop" className="hover:text-white transition">Careers</Link></li>
-            <li><Link to="/contact" className="hover:text-white transition">Press Releases</Link></li>
-            <li><Link to="/" className="hover:text-white transition">Akruti Science</Link></li>
+            <li><Link to="/" className="hover:text-gray-800 transition">About Akruti</Link></li>
+            <li><Link to="/shop" className="hover:text-gray-800 transition">Careers</Link></li>
+            <li><Link to="/contact" className="hover:text-gray-800 transition">Press Releases</Link></li>
+            <li><Link to="/" className="hover:text-gray-800 transition">Akruti Science</Link></li>
           </ul>
         </div>
 
@@ -37,11 +37,11 @@ const Footer = () => {
         <div>
           <h3 className="text-lg font-bold mb-6 text-cyan-400">Let Us Help You</h3>
           <ul className="space-y-3 text-sm text-gray-400">
-            <li><Link to="/contact" className="hover:text-white transition">Your Account</Link></li>
-            <li><Link to="/orders" className="hover:text-white transition">Your Orders</Link></li>
-            <li><Link to="/contact" className="hover:text-white transition">Shipping Rates</Link></li>
-            <li><Link to="/contact" className="hover:text-white transition">Returns & Replacements</Link></li>
-            <li><Link to="/contact" className="hover:text-white transition">Help Centre</Link></li>
+            <li><Link to="/contact" className="hover:text-gray-800 transition">Your Account</Link></li>
+            <li><Link to="/orders" className="hover:text-gray-800 transition">Your Orders</Link></li>
+            <li><Link to="/contact" className="hover:text-gray-800 transition">Shipping Rates</Link></li>
+            <li><Link to="/contact" className="hover:text-gray-800 transition">Returns & Replacements</Link></li>
+            <li><Link to="/contact" className="hover:text-gray-800 transition">Help Centre</Link></li>
           </ul>
         </div>
 
@@ -70,9 +70,9 @@ const Footer = () => {
       <div className="border-t border-gray-200 pt-8 mt-8 text-center text-sm text-gray-500">
         <p>&copy; {new Date().getFullYear()} Akruti 3D Solutions. All rights reserved.</p>
         <div className="flex justify-center gap-6 mt-4">
-          <Link to="/" className="hover:text-white">Privacy Policy</Link>
-          <Link to="/" className="hover:text-white">Terms of Service</Link>
-          <Link to="/" className="hover:text-white">Sitemap</Link>
+          <Link to="/" className="hover:text-gray-800">Privacy Policy</Link>
+          <Link to="/" className="hover:text-gray-800">Terms of Service</Link>
+          <Link to="/" className="hover:text-gray-800">Sitemap</Link>
         </div>
       </div>
     </footer>

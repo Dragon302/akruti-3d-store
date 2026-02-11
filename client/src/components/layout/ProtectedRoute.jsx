@@ -4,7 +4,7 @@ import { Navigate } from 'react-router-dom';
 const ProtectedRoute = ({ children, adminOnly = false }) => {
   const { user, loading } = useAuth();
 
-  if (loading) return <div className="text-white text-center p-10">Loading...</div>;
+  if (loading) return <div className="text-gray-800 text-center p-10">Loading...</div>;
 
   // 1. If not logged in, go to Login
   if (!user) {

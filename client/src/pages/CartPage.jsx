@@ -24,7 +24,7 @@ const CartPage = () => {
   const total = subtotal + tax + shipping;
 
   return (
-    <div className="min-h-screen bg-[#0f0c29] text-white p-6 md:p-12">
+    <div className="min-h-screen bg-[#0f0c29] text-gray-800 p-6 md:p-12">
       <div className="max-w-7xl mx-auto">
         <h1 className="text-3xl font-bold mb-8 flex items-center gap-2">
           Shopping Cart <span className="text-sm bg-pink-600 px-2 py-1 rounded-full">{cart.length} Items</span>
@@ -87,7 +87,7 @@ const CartPage = () => {
                   <span>Shipping</span> 
                   <span className={shipping === 0 ? "text-green-400" : ""}>{shipping === 0 ? "Free" : `₹${shipping}`}</span>
                 </div>
-                <div className="border-t border-gray-200 pt-3 flex justify-between font-bold text-white text-xl">
+                <div className="border-t border-gray-200 pt-3 flex justify-between font-bold text-gray-800 text-xl">
                   <span>Total</span> <span>₹{total}</span>
                 </div>
               </div>

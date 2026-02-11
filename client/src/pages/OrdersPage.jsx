@@ -27,10 +27,10 @@ const OrdersPage = () => {
   }
 }, [user]);
 
-  if (loading) return <div className="min-h-screen bg-[#0f0c29] text-white flex items-center justify-center">Loading Orders...</div>;
+  if (loading) return <div className="min-h-screen bg-[#0f0c29] text-gray-800 flex items-center justify-center">Loading Orders...</div>;
 
   return (
-    <div className="min-h-screen bg-[#0f0c29] text-white p-6 md:p-12">
+    <div className="min-h-screen bg-[#0f0c29] text-gray-800 p-6 md:p-12">
       <h1 className="text-3xl font-bold mb-8 text-center">My Orders</h1>
 
       {orders.length === 0 ? (
