@@ -24,7 +24,7 @@ const ShopPage = () => {
       });
   }, []);
 
-  if (loading) return <div className="min-h-screen bg-[#0f0c29] flex items-center justify-center text-gray-800">Loading Shop...</div>;
+  if (loading) return <div className="min-h-screen bg-slate-50 pt-24 pb-12 px-6 flex items-center justify-center text-gray-800">Loading Shop...</div>;
 
   return (
     <div className="min-h-screen bg-[#0f0c29] text-gray-800 p-6 md:p-12">

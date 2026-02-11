@@ -24,7 +24,7 @@ const CartPage = () => {
   const total = subtotal + tax + shipping;
 
   return (
-    <div className="min-h-screen bg-[#0f0c29] text-gray-800 p-6 md:p-12">
+    <div className="min-h-screen bg-slate-50 pt-28 pb-12 px-4  p-6 md:p-12">
       <div className="max-w-7xl mx-auto">
         <h1 className="text-3xl font-bold mb-8 flex items-center gap-2">
           Shopping Cart <span className="text-sm bg-pink-600 px-2 py-1 rounded-full">{cart.length} Items</span>
