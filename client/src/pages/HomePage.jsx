@@ -31,7 +31,17 @@ const HomePage = () => {
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-t from-[#0f0c29] via-[#0f0c29]/60 to-transparent z-10"></div>
           {/* Note: You can replace this URL with any 3D printing video you like */}
-         <video src="/hero.mp4" autoPlay loop muted  />
+         <video 
+  autoPlay 
+  loop 
+  muted 
+  className="w-full h-full object-cover"
+  /* OPTION 1: Abstract 3D Shapes (Very clean & modern) */
+  src="https://videos.pexels.com/video-files/3129671/3129671-uhd_2560_1440_30fps.mp4"
+  
+  /* OPTION 2: If you prefer a tech/printing vibe, use this: */
+  /* src="https://videos.pexels.com/video-files/3859065/3859065-uhd_2560_1440_25fps.mp4" */
+/>
         </div>
 
         {/* Hero Content */}
