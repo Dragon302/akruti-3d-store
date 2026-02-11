@@ -8,21 +8,20 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Urbanist', sans-serif;
-  
-  /* PREMIUM WHITE BACKGROUND */
-  /* This subtle gradient adds depth so glass cards stand out */
-  background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%); 
+
+
+  background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
   background-attachment: fixed; /* Keeps bg still while scrolling */
   
-  /* Text Color: Dark Gray (Readability) */
-  color: #ffffff; 
   
+  /* NEW: Default Text Color (Dark Gray instead of White) */
+  color: #1f2937;
   min-height: 100vh;
 }
 
 /* Fix for Input fields so you can see what you type */
 input, textarea, select {
-  background-color: #ffffff; /* Dark Purple */
+  background-color: #1a163a; /* Dark Purple */
   color: #ffffff; /* White Text */
   border: 1px solid #334155;
   border-radius: 0.5rem;
