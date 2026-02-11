@@ -28,9 +28,9 @@ const ShopPage = () => {
 
   return (
     <div className="min-h-screen bg-[#0f0c29] text-gray-800 p-6 md:p-12">
-      <h1 className="text-4xl font-bold mb-8 text-center lip-text text-transparent bg-gradient-to-r from-pink-500 to-purple-600">
-        Explore Our Collection
-      </h1>
+      <h1 className="text-4xl font-bold mb-8 text-center bg-clip-text text-transparent bg-gradient-to-r from-pink-600 to-purple-600">
+  Explore Our Collection
+</h1>
 
       {/* PRODUCT GRID */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
