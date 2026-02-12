@@ -23,7 +23,7 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div className="min-h-screen text-gray-800">
+    <div className="w-full overflow-hidden bg-white">
       
       {/* --- HERO SECTION WITH VIDEO BACKGROUND --- */}
       <div className="relative h-[80vh] w-full overflow-hidden flex items-center justify-center">
@@ -44,55 +44,68 @@ const HomePage = () => {
 />
         </div>
 
-        {/* Hero Content */}
-        <div className="relative z-20 text-center px-6 max-w-4xl mx-auto mt-10">
-          <div className="inline-block px-4 py-1 border border-cyan-500/50 rounded-full bg-cyan-500/10 text-cyan-400 text-sm font-bold mb-6 animate-pulse">
-            🚀 The Future of Manufacturing is Here
+        {/* 1. HERO SECTION (SafeTag Style) */}
+      <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 px-6">
+        <div className="max-w-7xl mx-auto text-center relative z-10">
+          
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 px-4 py-2 rounded-full font-semibold text-sm mb-8 animate-fade-up">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-600"></span>
+            </span>
+            New Collection 2026 Live
           </div>
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white via-cyan-100 to-gray-400 drop-shadow-lg">
-            Bring Your <span className="text-pink-500 italic">Ideas</span> to Life
+
+          {/* Big Headline */}
+          <h1 className="text-5xl md:text-7xl font-extrabold text-slate-900 tracking-tight mb-6 leading-tight animate-fade-up" style={{ animationDelay: "0.1s" }}>
+            Protect What <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">Matters.</span> <br className="hidden md:block"/>
+            Create What You Love.
           </h1>
-          <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            Premium 3D printed products, custom prototypes, and unique gifts. 
-            Crafted with precision, delivered to your doorstep.
+
+          {/* Subtext */}
+          <p className="text-lg md:text-xl text-slate-500 max-w-2xl mx-auto mb-10 animate-fade-up" style={{ animationDelay: "0.2s" }}>
+            Premium 3D printed accessories, secure tags, and custom designs. 
+            Engineered for durability, designed for you.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/shop" className="bg-gradient-to-r from-pink-600 to-purple-600 px-8 py-4 rounded-full font-bold text-lg hover:shadow-[0_0_20px_rgba(236,72,153,0.5)] transition-all flex items-center justify-center gap-2 group">
-              Shop Now <ArrowRight className="group-hover:translate-x-1 transition-transform"/>
+
+          {/* Buttons */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up" style={{ animationDelay: "0.3s" }}>
+            <Link to="/shop" className="w-full sm:w-auto px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-full transition-all shadow-xl shadow-blue-500/30 flex items-center justify-center gap-2">
+              Shop Now <ArrowRight size={20} />
             </Link>
-            <Link to="/contact" className="px-8 py-4 rounded-full font-bold text-lg border border-gray-300/20 hover:bg-white/10 transition-all">
-              Custom Order
+            <Link to="/about" className="w-full sm:w-auto px-8 py-4 bg-white border-2 border-slate-200 text-slate-700 font-bold rounded-full hover:border-slate-400 transition-all flex items-center justify-center">
+              Learn More
             </Link>
           </div>
         </div>
+
+        {/* Abstract Background Decoration (The "Tech" feel) */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full z-0 pointer-events-none opacity-40">
+           <div className="absolute top-20 left-10 w-72 h-72 bg-blue-400/20 rounded-full blur-3xl animate-pulse"></div>
+           <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-400/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "2s" }}></div>
+        </div>
+      </section>
       </div>
 
-      {/* --- TRUST BADGES --- */}
-      <div className="bg-[#1a163a] py-10 border-y border-gray-300/5">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-          <div className="p-6 rounded-2xl bg-[#0f0c29]/50 border border-gray-300/5 hover:border-cyan-500/30 transition group">
-            <div className="w-14 h-14 bg-cyan-500/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
-              <Zap size={28} className="text-cyan-400" />
-            </div>
-            <h3 className="text-xl font-bold mb-2">Rapid Prototyping</h3>
-            <p className="text-gray-400 text-sm">From design to physical product in record time using advanced PLA & ABS.</p>
-          </div>
-          <div className="p-6 rounded-2xl bg-[#0f0c29]/50 border border-gray-300/5 hover:border-pink-500/30 transition group">
-            <div className="w-14 h-14 bg-pink-500/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
-              <ShieldCheck size={28} className="text-pink-400" />
-            </div>
-            <h3 className="text-xl font-bold mb-2">Quality Assured</h3>
-            <p className="text-gray-400 text-sm">Every layer is inspected. We guarantee high durability and fine details.</p>
-          </div>
-          <div className="p-6 rounded-2xl bg-[#0f0c29]/50 border border-gray-300/5 hover:border-purple-500/30 transition group">
-            <div className="w-14 h-14 bg-purple-500/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
-              <Truck size={28} className="text-purple-400" />
-            </div>
-            <h3 className="text-xl font-bold mb-2">Pan-India Shipping</h3>
-            <p className="text-gray-400 text-sm">Secure packaging and fast delivery partners to get your order safely.</p>
-          </div>
+      {/* 2. TRUST BADGES (Security Section) */}
+      <section className="py-12 border-y border-slate-100 bg-slate-50/50">
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+           <div className="flex flex-col items-center gap-2 text-slate-600">
+              <ShieldCheck className="text-blue-600" size={32} />
+              <span className="font-bold text-slate-900">100% Secure</span>
+           </div>
+           <div className="flex flex-col items-center gap-2 text-slate-600">
+              <Truck className="text-blue-600" size={32} />
+              <span className="font-bold text-slate-900">Fast Shipping</span>
+           </div>
+           <div className="flex flex-col items-center gap-2 text-slate-600">
+              <Star className="text-blue-600" size={32} />
+              <span className="font-bold text-slate-900">Top Rated</span>
+           </div>
+           {/* Add more as needed */}
         </div>
-      </div>
+      </section>
 
       {/* --- FEATURED PRODUCTS --- */}
       <div className="max-w-7xl mx-auto px-6 py-20">

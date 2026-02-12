@@ -1,80 +1,80 @@
-import { Link, useLocation } from 'react-router-dom';
-import { ShoppingBag, User, LogOut, Package } from 'lucide-react'; // Added Package icon for Orders
-import { useCart } from '../../context/CartContext';
-import { useAuth } from '../../context/AuthContext';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { ShoppingCart, User, Menu, X } from "lucide-react";
+import { useCart } from "../context/CartContext";
 
 const Navbar = () => {
-  const { cartCount } = useCart();
-  const { user, logout } = useAuth();
-  const location = useLocation();
+  const { cart } = useCart();
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
-  const isActive = (path) => location.pathname === path ? "text-secondary font-bold" : "text-gray-400 hover:text-gray-800";
+  // Detect Scroll for "Glass" effect
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <motion.nav 
-      initial={{ y: -20 }} animate={{ y: 0 }}
-      className="sticky w-full z-50 top-0 start-0 border-b border-gray-200 bg-white/80 backdrop-blur-md"
+    <nav
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-white/90 backdrop-blur-md shadow-sm py-4 border-b border-gray-100"
+          : "bg-transparent py-6"
+      }`}
     >
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
+      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         
-        {/* Brand */}
-        <Link to="/" className="text-2xl font-bold tracking-tight text-gray-800">
-          Akruti<span className="text-secondary">.3D</span>
+        {/* 1. LOGO (Text or Image) */}
+        <Link to="/" className="text-2xl font-extrabold tracking-tight text-slate-900 flex items-center gap-2">
+          {/* Replace with your logo img if you have one */}
+          <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold">A</div>
+          <span>Akruti<span className="text-blue-600">.</span></span>
         </Link>
 
-        {/* Links */}
-        <div className="hidden md:flex gap-8 text-sm font-medium">
-          <Link to="/" className={isActive('/')}>Home</Link>
-          
-          <Link to="/shop" className={isActive('/shop')}>Catalog</Link>
-          <Link to="/contact" className={isActive('/contact')}>Contact</Link>
-          {user?.isAdmin && <Link to="/admin" className="text-pink-500 font-bold">Admin Panel</Link>}
+        {/* 2. DESKTOP LINKS */}
+        <div className="hidden md:flex items-center gap-8 font-medium text-slate-600">
+          <Link to="/" className="hover:text-blue-600 transition-colors">Home</Link>
+          <Link to="/shop" className="hover:text-blue-600 transition-colors">Products</Link>
+          <Link to="/about" className="hover:text-blue-600 transition-colors">About Us</Link>
+          <Link to="/contact" className="hover:text-blue-600 transition-colors">Contact</Link>
         </div>
 
-        {/* Right Side Icons */}
+        {/* 3. ICONS & BUTTONS */}
         <div className="flex items-center gap-6">
-          
-          {/* Cart */}
-          <Link to="/cart" className="relative p-2 text-gray-800 hover:bg-white/10 rounded-full transition">
-            <ShoppingBag size={22} />
-            {cartCount > 0 && (
-              <span className="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-[10px] font-bold">
-                {cartCount}
+          <Link to="/cart" className="relative text-slate-700 hover:text-blue-600 transition">
+            <ShoppingCart size={24} />
+            {cart.length > 0 && (
+              <span className="absolute -top-2 -right-2 bg-blue-600 text-white text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full">
+                {cart.length}
               </span>
             )}
           </Link>
+          
+          <Link to="/login" className="hidden md:flex items-center gap-2 bg-slate-900 text-white px-5 py-2.5 rounded-full font-semibold hover:bg-blue-600 transition-all shadow-lg shadow-blue-500/20">
+            <User size={18} />
+            <span>Login</span>
+          </Link>
 
-          {/* User Logic */}
-          {user ? (
-            <div className="flex items-center gap-4">
-              <span className="text-sm font-bold text-cyan-400 hidden sm:block">Hi, {user.name}</span>
-              
-              {/* --- CORRECTED SECTION START --- */}
-              {/* My Orders Link (Separate from Logout) */}
-              <Link to="/orders" className="text-sm text-gray-300 hover:text-gray-800 transition flex items-center gap-1">
-                <Package size={16} /> <span className="hidden sm:inline">Orders</span>
-              </Link>
-
-              {/* Logout Button */}
-              <button 
-                onClick={logout} 
-                className="flex items-center gap-2 bg-white/10 hover:bg-red-500/20 text-gray-800 px-3 py-2 rounded-lg text-xs font-bold transition border border-white/5"
-              >
-                <LogOut size={16} /> Logout
-              </button>
-              {/* --- CORRECTED SECTION END --- */}
-
-            </div>
-          ) : (
-            <Link to="/login" className="p-2 text-gray-800 hover:bg-white/10 rounded-full transition">
-              <User size={22} />
-            </Link>
-          )}
-
+          {/* Mobile Menu Button */}
+          <button className="md:hidden text-slate-900" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+            {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
         </div>
       </div>
-    </motion.nav>
+
+      {/* Mobile Menu Overlay */}
+      {mobileMenuOpen && (
+        <div className="md:hidden absolute top-full left-0 w-full bg-white border-t border-gray-100 p-6 flex flex-col gap-4 shadow-xl">
+           <Link to="/" onClick={() => setMobileMenuOpen(false)} className="text-lg font-medium text-slate-700">Home</Link>
+           <Link to="/shop" onClick={() => setMobileMenuOpen(false)} className="text-lg font-medium text-slate-700">Products</Link>
+           <Link to="/login" onClick={() => setMobileMenuOpen(false)} className="text-lg font-medium text-blue-600">Login / Sign Up</Link>
+        </div>
+      )}
+    </nav>
   );
 };
 
