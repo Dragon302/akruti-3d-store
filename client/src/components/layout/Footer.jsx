@@ -1,82 +1,58 @@
 import { Link } from 'react-router-dom';
 import { Facebook, Twitter, Instagram, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
+import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-100 text-gray-800 pt-16 pb-8 border-t border-gray-200">
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+    <footer className="bg-slate-900 text-white pt-16 pb-8">
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
         
-        {/* Column 1: Brand Info */}
-        <div className="space-y-4">
-          <h2 className="text-2xl font-bold tracking-tight text-gray-800">
-            Akruti<span className="text-secondary">.3D</span>
-          </h2>
-          <p className="text-gray-400 text-sm leading-relaxed">
-            India's premium destination for high-quality 3D printed artifacts, cosplay props, and custom prototypes. Turning imagination into reality.
+        {/* Brand */}
+        <div className="col-span-1 md:col-span-1">
+          <h2 className="text-2xl font-bold mb-4">Akruti.</h2>
+          <p className="text-slate-400 mb-6">
+            Innovating the future of 3D printing with secure, durable, and eco-friendly designs.
           </p>
-          <div className="flex gap-4 pt-2">
-            <a href="#" className="bg-white/10 p-2 rounded-full hover:bg-pink-600 transition"><Instagram size={18}/></a>
-            <a href="#" className="bg-white/10 p-2 rounded-full hover:bg-blue-500 transition"><Twitter size={18}/></a>
-            <a href="#" className="bg-white/10 p-2 rounded-full hover:bg-blue-700 transition"><Linkedin size={18}/></a>
-            <a href="#" className="bg-white/10 p-2 rounded-full hover:bg-blue-600 transition"><Facebook size={18}/></a>
+          <div className="flex gap-4">
+            <div className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-600 transition cursor-pointer"><Facebook size={18}/></div>
+            <div className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-600 transition cursor-pointer"><Instagram size={18}/></div>
+            <div className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-600 transition cursor-pointer"><Twitter size={18}/></div>
           </div>
         </div>
 
-        {/* Column 2: Quick Links */}
+        {/* Links */}
         <div>
-          <h3 className="text-lg font-bold mb-6 text-cyan-400">Get to Know Us</h3>
-          <ul className="space-y-3 text-sm text-gray-400">
-            <li><Link to="/" className="hover:text-gray-800 transition">About Akruti</Link></li>
-            <li><Link to="/shop" className="hover:text-gray-800 transition">Careers</Link></li>
-            <li><Link to="/contact" className="hover:text-gray-800 transition">Press Releases</Link></li>
-            <li><Link to="/" className="hover:text-gray-800 transition">Akruti Science</Link></li>
+          <h3 className="font-bold text-lg mb-6">Shop</h3>
+          <ul className="space-y-3 text-slate-400">
+            <li className="hover:text-blue-400 cursor-pointer">All Products</li>
+            <li className="hover:text-blue-400 cursor-pointer">New Arrivals</li>
+            <li className="hover:text-blue-400 cursor-pointer">Best Sellers</li>
           </ul>
         </div>
 
-        {/* Column 3: Customer Service */}
         <div>
-          <h3 className="text-lg font-bold mb-6 text-cyan-400">Let Us Help You</h3>
-          <ul className="space-y-3 text-sm text-gray-400">
-            <li><Link to="/contact" className="hover:text-gray-800 transition">Your Account</Link></li>
-            <li><Link to="/orders" className="hover:text-gray-800 transition">Your Orders</Link></li>
-            <li><Link to="/contact" className="hover:text-gray-800 transition">Shipping Rates</Link></li>
-            <li><Link to="/contact" className="hover:text-gray-800 transition">Returns & Replacements</Link></li>
-            <li><Link to="/contact" className="hover:text-gray-800 transition">Help Centre</Link></li>
+          <h3 className="font-bold text-lg mb-6">Support</h3>
+          <ul className="space-y-3 text-slate-400">
+            <li className="hover:text-blue-400 cursor-pointer">Track Order</li>
+            <li className="hover:text-blue-400 cursor-pointer">Shipping Policy</li>
+            <li className="hover:text-blue-400 cursor-pointer">Returns</li>
           </ul>
         </div>
 
-        {/* Column 4: Contact Info */}
+        {/* Newsletter */}
         <div>
-          <h3 className="text-lg font-bold mb-6 text-cyan-400">Contact Us</h3>
-          <ul className="space-y-4 text-sm text-gray-400">
-            <li className="flex items-start gap-3">
-              <MapPin className="text-pink-500 mt-1" size={18} />
-              <span>123 Maker Street, Bhiwandi,<br/>Maharashtra, India - 421302</span>
-            </li>
-            <li className="flex items-center gap-3">
-              <Phone className="text-pink-500" size={18} />
-              <span>+91 98765 43210</span>
-            </li>
-            <li className="flex items-center gap-3">
-              <Mail className="text-pink-500" size={18} />
-              <span>support@akruti.com</span>
-            </li>
-          </ul>
+          <h3 className="font-bold text-lg mb-6">Stay Updated</h3>
+          <div className="flex gap-2">
+            <input type="email" placeholder="Enter your email" className="bg-slate-800 border-none rounded-lg px-4 py-3 w-full text-white focus:ring-2 focus:ring-blue-600 outline-none" />
+            <button className="bg-blue-600 px-4 py-3 rounded-lg font-bold hover:bg-blue-700">Go</button>
+          </div>
         </div>
-
       </div>
 
-      {/* Bottom Bar */}
-      <div className="border-t border-gray-200 pt-8 mt-8 text-center text-sm text-gray-500">
-        <p>&copy; {new Date().getFullYear()} Akruti 3D Solutions. All rights reserved.</p>
-        <div className="flex justify-center gap-6 mt-4">
-          <Link to="/" className="hover:text-gray-800">Privacy Policy</Link>
-          <Link to="/" className="hover:text-gray-800">Terms of Service</Link>
-          <Link to="/" className="hover:text-gray-800">Sitemap</Link>
-        </div>
+      <div className="border-t border-slate-800 pt-8 text-center text-slate-500 text-sm">
+        &copy; 2026 Akruti 3D Store. All rights reserved.
       </div>
     </footer>
   );
 };
-
 export default Footer;

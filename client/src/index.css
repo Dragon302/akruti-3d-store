@@ -1,29 +1,45 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* 1. APPLY THE FONT GLOBALLY */
-body {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  background-color: #ffffff;
-  color: #0f172a; /* Slate-900 (Dark text) */
-  overflow-x: hidden; /* Prevent side scroll */
+:root {
+  --primary: #2563eb; /* SafeTag Blue */
+  --dark: #0f172a;    /* Deep Black/Slate */
+  --light: #f8fafc;   /* clean gray background */
 }
 
-/* 2. ADD SAFETAG-STYLE ANIMATIONS */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif; /* The Tech Font */
+  background-color: #ffffff;
+  color: var(--dark);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* SAFETAG ANIMATIONS */
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(30px); }
+  from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Apply this class to any element you want to animate */
 .animate-fade-up {
-  animation: fadeUp 0.8s ease-out forwards;
+  animation: fadeUp 0.6s ease-out forwards;
 }
 
-/* 3. SMOOTH SCROLLING */
-html {
-  scroll-behavior: smooth;
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
 }

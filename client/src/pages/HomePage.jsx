@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import Navbar from "../components/layout/Navbar";
+import Footer from "../components/layout/Footer";
 import { Link } from 'react-router-dom';
-import { ArrowRight, Truck, ShieldCheck, Zap, Star } from 'lucide-react';
+import { ArrowRight, Shield, Zap, Globe } from 'lucide-react';
 import toast from 'react-hot-toast';
 
 const HomePage = () => {
@@ -44,66 +46,55 @@ const HomePage = () => {
 />
         </div>
 
-        {/* 1. HERO SECTION (SafeTag Style) */}
-      <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 px-6">
-        <div className="max-w-7xl mx-auto text-center relative z-10">
-          
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 px-4 py-2 rounded-full font-semibold text-sm mb-8 animate-fade-up">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-600"></span>
-            </span>
-            New Collection 2026 Live
-          </div>
-
-          {/* Big Headline */}
-          <h1 className="text-5xl md:text-7xl font-extrabold text-slate-900 tracking-tight mb-6 leading-tight animate-fade-up" style={{ animationDelay: "0.1s" }}>
-            Protect What <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">Matters.</span> <br className="hidden md:block"/>
-            Create What You Love.
-          </h1>
-
-          {/* Subtext */}
-          <p className="text-lg md:text-xl text-slate-500 max-w-2xl mx-auto mb-10 animate-fade-up" style={{ animationDelay: "0.2s" }}>
-            Premium 3D printed accessories, secure tags, and custom designs. 
-            Engineered for durability, designed for you.
-          </p>
-
-          {/* Buttons */}
-          <div className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-bold shadow-lg shadow-blue-500/30 transition-all" style={{ animationDelay: "0.3s" }}>
-            <Link to="/shop" className="w-full sm:w-auto px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-full transition-all shadow-xl shadow-blue-500/30 flex items-center justify-center gap-2">
-              Shop Now <ArrowRight size={20} />
-            </Link>
-            <Link to="/about" className="w-full sm:w-auto px-8 py-4 bg-white border-2 border-slate-200 text-slate-700 font-bold rounded-full hover:border-slate-400 transition-all flex items-center justify-center">
-              Learn More
-            </Link>
-          </div>
+        {/* HERO SECTION */}
+      <section className="pt-32 pb-20 px-6 max-w-7xl mx-auto text-center relative overflow-hidden">
+        
+        {/* Badge */}
+        <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 px-4 py-1.5 rounded-full text-sm font-semibold mb-8 animate-fade-up">
+          <span className="w-2 h-2 bg-blue-600 rounded-full animate-pulse"></span>
+          New 3D Collection Live
         </div>
 
-        {/* Abstract Background Decoration (The "Tech" feel) */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full z-0 pointer-events-none opacity-40">
-           <div className="absolute top-20 left-10 w-72 h-72 bg-blue-400/20 rounded-full blur-3xl animate-pulse"></div>
-           <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-400/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "2s" }}></div>
+        {/* Headline */}
+        <h1 className="text-5xl md:text-7xl font-extrabold text-slate-900 tracking-tight mb-6 leading-[1.1] animate-fade-up" style={{animationDelay: "0.1s"}}>
+          Next Gen <span className="text-blue-600">3D Printing</span> <br />
+          For Modern Creators.
+        </h1>
+
+        {/* Subtext */}
+        <p className="text-lg text-slate-500 max-w-2xl mx-auto mb-10 animate-fade-up" style={{animationDelay: "0.2s"}}>
+          Secure, durable, and custom-designed 3D products. 
+          Experience the future of manufacturing with Akruti.
+        </p>
+
+        {/* Buttons */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up" style={{animationDelay: "0.3s"}}>
+          <Link to="/shop" className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-full transition-all shadow-xl shadow-blue-500/30 flex items-center gap-2">
+            Start Shopping <ArrowRight size={18} />
+          </Link>
+          <Link to="/about" className="px-8 py-4 bg-white border border-slate-200 text-slate-700 font-bold rounded-full hover:bg-slate-50 transition-all">
+            Learn More
+          </Link>
         </div>
+
+        {/* Abstract Background Blur */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-100/50 rounded-full blur-3xl -z-10 opacity-50"></div>
       </section>
-      </div>
 
-      {/* 2. TRUST BADGES (Security Section) */}
-      <section className="py-12 border-y border-slate-100 bg-slate-50/50">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-           <div className="flex flex-col items-center gap-2 text-slate-600">
-              <ShieldCheck className="text-blue-600" size={32} />
-              <span className="font-bold text-slate-900">100% Secure</span>
-           </div>
-           <div className="flex flex-col items-center gap-2 text-slate-600">
-              <Truck className="text-blue-600" size={32} />
-              <span className="font-bold text-slate-900">Fast Shipping</span>
-           </div>
-           <div className="flex flex-col items-center gap-2 text-slate-600">
-              <Star className="text-blue-600" size={32} />
-              <span className="font-bold text-slate-900">Top Rated</span>
-           </div>
-           {/* Add more as needed */}
+      {/* FEATURES GRID */}
+      <section className="py-20 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8">
+          {[
+            { icon: <Shield className="text-blue-600" size={32} />, title: "Secure & Durable", desc: "Built with premium materials." },
+            { icon: <Zap className="text-blue-600" size={32} />, title: "Fast Production", desc: "From design to shipping in 24h." },
+            { icon: <Globe className="text-blue-600" size={32} />, title: "Eco-Friendly", desc: "Sustainable PLA materials." }
+          ].map((item, i) => (
+            <div key={i} className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-all">
+              <div className="mb-4 bg-blue-50 w-14 h-14 rounded-xl flex items-center justify-center">{item.icon}</div>
+              <h3 className="text-xl font-bold text-slate-900 mb-2">{item.title}</h3>
+              <p className="text-slate-500">{item.desc}</p>
+            </div>
+          ))}
         </div>
       </section>
 
